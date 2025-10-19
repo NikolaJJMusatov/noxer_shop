@@ -19,3 +19,5 @@ npm install
 npm run dev
 ```
 Проект доступен на `http://localhost:5173/`
+
+Деплой доступен на [**Vercel**](https://noxer-shop.vercel.app/)
