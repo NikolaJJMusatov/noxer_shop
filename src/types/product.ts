@@ -1,4 +1,3 @@
-// Типизация для категорий
 export interface CategoryImage {
   name: string;
   type: string;
@@ -14,7 +13,6 @@ export interface Category {
   sort_order: number;
 }
 
-// Типизация для изображений продукта
 export interface ProductImage {
   Image_ID?: number;
   Image_URL?: string;
@@ -23,16 +21,14 @@ export interface ProductImage {
   position?: string;
   sort_order?: number;
   title?: string;
-  image_url?: string; // для нестандартного ключа
+  image_url?: string;
 }
 
-// Типизация для маркировок продукта
 export interface ProductMark {
   Mark_Name: string;
   color_code: string;
 }
 
-// Типизация продукта
 export interface Product {
   id: number;
   images: ProductImage[];
@@ -42,7 +38,6 @@ export interface Product {
   price: number;
 }
 
-// Типизация пагинации
 export interface Pagination {
   current_page: number;
   has_next: boolean;
@@ -52,7 +47,6 @@ export interface Pagination {
   total_products: number;
 }
 
-// Основной ответ API
 export interface ProductsResponse {
   categories: Category[];
   id_mark_for_sale: number;

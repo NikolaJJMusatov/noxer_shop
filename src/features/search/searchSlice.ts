@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface SearchState {
   query: string;
@@ -6,13 +6,12 @@ interface SearchState {
 }
 
 const initialState: SearchState = {
-  query: "",
+  query: '',
   category: null,
 };
 
-
 const searchSlice = createSlice({
-  name: "search",
+  name: 'search',
   initialState,
   reducers: {
     setSearchQuery(state, action: PayloadAction<string>) {
@@ -21,7 +20,7 @@ const searchSlice = createSlice({
     },
     setCategory(state, action: PayloadAction<number | null>) {
       state.category = action.payload;
-      if (action.payload) state.query = "";
+      if (action.payload) state.query = '';
     },
   },
 });

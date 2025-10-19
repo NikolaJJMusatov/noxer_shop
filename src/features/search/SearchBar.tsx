@@ -1,9 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
-import { useAppDispatch } from "../../app/hooks";
-import { setSearchQuery } from "./searchSlice";
-import debounce from "lodash.debounce";
-import "./SearchBar.css"
-
+import debounce from 'lodash.debounce';
+import { useEffect, useMemo, useState } from 'react';
+import { useAppDispatch } from '../../app/hooks';
+import './SearchBar.css';
+import { setSearchQuery } from './searchSlice';
 
 interface SearchBarProps {
   popularQueries?: string[];
@@ -11,13 +10,13 @@ interface SearchBarProps {
 
 export default function SearchBar({ popularQueries = [] }: SearchBarProps) {
   const dispatch = useAppDispatch();
-  const [input, setInput] = useState<string>("");
+  const [input, setInput] = useState<string>('');
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
   const debouncedDispatch = useMemo(
     () =>
       debounce((value: string) => {
-        if (value !== "") {
+        if (value !== '') {
           dispatch(setSearchQuery(value));
         }
       }, 400),
@@ -25,8 +24,8 @@ export default function SearchBar({ popularQueries = [] }: SearchBarProps) {
   );
 
   useEffect(() => {
-    if (input === "") {
-      dispatch(setSearchQuery(""));
+    if (input === '') {
+      dispatch(setSearchQuery(''));
     } else {
       debouncedDispatch(input);
     }
@@ -46,7 +45,7 @@ export default function SearchBar({ popularQueries = [] }: SearchBarProps) {
       <div className="search-bar-input-container">
         <input
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={e => setInput(e.target.value)}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setTimeout(() => setIsFocused(false), 200)}
           className="search-bar-input"
@@ -57,19 +56,19 @@ export default function SearchBar({ popularQueries = [] }: SearchBarProps) {
         </span>
       </div>
 
-      {isFocused && input === "" && popularQueries?.length > 0 && (
-          <div className="popular-searches">
-            <h4>Часто ищут</h4>
-            <ul>
-              {popularQueries.map((item) => (
-                <li key={item} onMouseDown={() => handlePopularClick(item)}>
-                  <img src="/icon_search.svg" alt="" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      {isFocused && input === '' && popularQueries?.length > 0 && (
+        <div className="popular-searches">
+          <h4>Часто ищут</h4>
+          <ul>
+            {popularQueries.map(item => (
+              <li key={item} onMouseDown={() => handlePopularClick(item)}>
+                <img src="/icon_search.svg" alt="" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

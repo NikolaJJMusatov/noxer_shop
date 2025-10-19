@@ -10,8 +10,7 @@ h6,
 p,
 ul,
 ol,
-li
- {
+li {
   margin: 0;
   padding: 0;
 }
@@ -30,7 +29,7 @@ a {
   --primary: #292928;
   --secondary: #ffffff;
   --bg: #f1f1f1;
-  --info: #F24131;
+  --info: #f24131;
   --min-width: 360px;
   --max-width: 600px;
 }
