@@ -1,0 +1,40 @@
+.custom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  width: max-content;
+}
+
+.custom-button:hover {
+  filter: invert(100%);
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+}
+
+.button-text {
+  font-family: 'Inter', sans-serif;
+}
+
+.custom-button.small {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.custom-button.medium {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.custom-button.large {
+  padding: 14px 28px;
+  font-size: 18px;
+}

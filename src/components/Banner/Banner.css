@@ -1,0 +1,36 @@
+.banner-container {
+  background-image: url('./banner_img.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+
+  height: clamp(
+    140px,
+    calc(140px + (103 * ((100vw - 360px) / 240))),
+    243px
+  );
+}
+
+.banner-container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: clamp(
+    100px,
+    calc(100px + (103 * ((100vw - 360px) / 240))),
+    203px
+  );
+}
+
+.banner-container-content-text {
+  color: #fff;
+  font-size: clamp(0.625rem, 0.0625rem + 2.5vw, 1rem);
+}
+
+.banner-container-content-text span {
+  font-size: clamp(1.25rem, -0.25rem + 6.6667vw, 2.25rem);
+  text-transform: uppercase;
+  font-weight: 700;
+}
